@@ -1,0 +1,189 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-manrope), 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-manrope), 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-strong: var(--brand-green-strong);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/*
+  Palette derived from the Al-Noor Arabia logo:
+  navy wordmark, globe blue, swoosh green, plus white and a cool neutral.
+*/
+:root {
+  color-scheme: light;
+  --navy: oklch(0.29 0.09 260);
+  --navy-deep: oklch(0.22 0.07 260);
+  --brand-blue: oklch(0.6 0.15 245);
+  --brand-green: oklch(0.66 0.17 140);
+  --brand-green-strong: oklch(0.52 0.15 145);
+
+  --background: oklch(1 0 0);
+  --foreground: var(--navy);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--navy);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--navy);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.965 0.012 245);
+  --secondary-foreground: var(--navy);
+  --muted: oklch(0.965 0.012 245);
+  --muted-foreground: oklch(0.47 0.03 255);
+  --accent: var(--brand-green-strong);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.2 27);
+  --border: oklch(0.91 0.015 250);
+  --input: oklch(0.88 0.018 250);
+  --ring: var(--brand-blue);
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+/* Animated visuals (components/site/animated-visual.tsx) */
+.av-spin {
+  animation: av-spin linear infinite;
+}
+.av-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: av-pulse 3s ease-in-out infinite;
+}
+.av-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: av-ring 4s ease-out infinite;
+}
+.av-bar {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: av-bar 4s ease-in-out infinite;
+}
+.av-flow {
+  animation: av-flow 2.4s linear infinite;
+}
+.av-draw {
+  stroke-dasharray: 1;
+  animation: av-draw 3.5s ease-in-out infinite;
+}
+
+@keyframes av-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes av-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+@keyframes av-ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+@keyframes av-bar {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes av-flow {
+  to {
+    stroke-dashoffset: calc(-1 * var(--dash-period, 24px));
+  }
+}
+@keyframes av-draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  55%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .av-spin,
+  .av-pulse,
+  .av-ring,
+  .av-bar,
+  .av-flow,
+  .av-draw {
+    animation: none;
+  }
+  .av-draw {
+    stroke-dashoffset: 0;
+  }
+}
