@@ -9,9 +9,9 @@ export function ServiceStandards({ service }: { service: Service }) {
     <section aria-labelledby="standards-title" className="bg-muted">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-16">
         <Reveal className="flex flex-col gap-3">
-          <p className="text-xs font-bold tracking-[0.2em] text-brand-green-strong uppercase">Standards & Certifications</p>
+          <p className="text-xs font-bold tracking-[0.2em] text-brand-green-strong uppercase">Standards & Readiness Support</p>
           <h2 id="standards-title" className="text-3xl font-extrabold md:text-4xl">
-            Management Systems & Certifications We Support
+            Management Systems & Standards We Support
           </h2>
         </Reveal>
 

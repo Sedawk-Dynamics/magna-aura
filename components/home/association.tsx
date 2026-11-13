@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { AnimatedVisual } from '@/components/site/animated-visual'
-import { LinkKuwait, KUWAIT_NAME } from '@/components/site/kuwait-link'
+import { LinkKuwait, KUWAIT_NAME, KUWAIT_URL } from '@/components/site/kuwait-link'
 import { Reveal, Stagger, StaggerItem } from '@/components/site/reveal'
 import { ASSOCIATION, SITE } from '@/lib/site-data'
 import { ICONS } from '@/lib/icons'
@@ -29,11 +29,11 @@ export function Association() {
           </Reveal>
 
           <Reveal delay={0.15} className="relative mx-auto aspect-[16/9] w-full max-w-xs overflow-hidden rounded-xl md:w-64">
-            <AnimatedVisual kind="globe" />
+            <AnimatedVisual kind="handshake" />
           </Reveal>
 
           <Reveal delay={0.3} className="flex flex-col items-center gap-3 rounded-xl bg-card p-6 text-center shadow-sm md:items-end md:text-right">
-            <a href="https://alnoor-international.com" target="_blank" rel="noopener noreferrer" aria-label={`${KUWAIT_NAME} (opens in a new tab)`}>
+            <a href={KUWAIT_URL} target="_blank" rel="noopener noreferrer" aria-label={`${KUWAIT_NAME} (opens in a new tab)`}>
               <Image
                 src="/images/alnoor-kuwait-logo.png"
                 alt={KUWAIT_NAME}

@@ -40,7 +40,7 @@ export function Team() {
                       {m.role}
                     </p>
                     <p className="text-xs leading-relaxed font-semibold text-brand-blue">{m.credentials}</p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{m.summary}</p>
+                    <p className="text-sm leading-relaxed text-brand-blue">{m.summary}</p>
                   </div>
                 </article>
               </StaggerItem>
@@ -50,7 +50,7 @@ export function Team() {
 
         <div className="flex flex-col gap-6">
           <Reveal className="flex flex-col gap-4">
-            <h3 className="w-fit rounded-r-full bg-primary py-2 pr-6 pl-4 text-lg font-bold text-primary-foreground">
+            <h3 className="w-fit rounded-r-full bg-brand-green-strong py-2 pr-6 pl-4 text-lg font-bold text-accent-foreground">
               Our Specialist Consulting Network
             </h3>
             <div className="flex flex-col gap-2">
@@ -62,23 +62,22 @@ export function Team() {
             {ABOUT.specialists.map((s) => {
               const Icon = ICONS[s.icon]
               return (
-                <StaggerItem key={s.title} className="flex flex-col gap-4 rounded-xl border bg-card p-6">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary text-brand-blue">
-                      <Icon className="size-6" aria-hidden="true" />
-                    </span>
-                    <h4 className="text-lg leading-snug font-bold">{s.title}</h4>
-                  </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-                  {s.badges.length > 0 && (
-                    <ul className="mt-auto flex flex-wrap gap-2">
-                      {s.badges.map((b) => (
-                        <li key={b} className="rounded-md bg-accent px-2.5 py-1 text-xs font-semibold text-accent-foreground">
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                <StaggerItem key={s.title} className="flex h-full flex-col gap-4 rounded-xl border bg-card p-6 shadow-sm">
+                  <span className="inline-flex size-12 items-center justify-center rounded-full bg-secondary text-brand-blue">
+                    <Icon className="size-6" aria-hidden="true" />
+                  </span>
+                  <h4 className="text-lg leading-snug font-extrabold">{s.title}</h4>
+                  <p className="w-fit rounded-md bg-brand-green-strong px-3 py-1 text-xs leading-snug font-bold text-accent-foreground">
+                    {s.years}
+                  </p>
+                  <ul className="flex flex-col gap-2">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex gap-2.5 text-sm leading-relaxed text-brand-blue">
+                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-green" aria-hidden="true" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
                 </StaggerItem>
               )
             })}

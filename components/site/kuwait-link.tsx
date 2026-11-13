@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 
 export const KUWAIT_NAME = 'Al-Noor International Consultants, Kuwait'
-export const KUWAIT_URL = 'https://alnoor-international.com'
+export const KUWAIT_URL = 'https://www.alnoor-consultants.com'
 
 /**
  * Renders text and turns every mention of the Kuwait partner's name into a link

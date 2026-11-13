@@ -20,18 +20,6 @@ export function WhoWeAre() {
         <div className="flex flex-col gap-4 border-l-4 border-brand-green-strong pl-6">
           <p className="text-xl leading-relaxed font-semibold text-pretty text-foreground md:text-2xl">{ABOUT.whoWeAre}</p>
         </div>
-        <Stagger className="mt-2 grid grid-cols-3 gap-3">
-          {ASSOCIATION.stats.map((s) => {
-            const Icon = ICONS[s.icon]
-            return (
-              <StaggerItem key={s.label} className="flex flex-col items-center gap-1 rounded-xl bg-navy-deep p-4 text-center text-primary-foreground">
-                <Icon className="size-5 text-brand-green" aria-hidden="true" />
-                <p className="text-2xl font-extrabold sm:text-3xl">{s.value}</p>
-                <p className="text-xs leading-snug text-primary-foreground/75">{s.label}</p>
-              </StaggerItem>
-            )
-          })}
-        </Stagger>
       </Reveal>
 
       <Reveal delay={0.15} className="flex flex-col gap-6 lg:border-l lg:pl-16">
@@ -53,6 +41,18 @@ export function WhoWeAre() {
           <p className="text-base leading-relaxed text-muted-foreground">
             <LinkKuwait text={ASSOCIATION.text} />
           </p>
+          <Stagger className="grid grid-cols-3 gap-3">
+            {ASSOCIATION.stats.map((s) => {
+              const Icon = ICONS[s.icon]
+              return (
+                <StaggerItem key={s.label} className="flex flex-col items-center gap-1 rounded-xl bg-navy-deep p-4 text-center text-primary-foreground">
+                  <Icon className="size-5 text-brand-green" aria-hidden="true" />
+                  <p className="text-2xl font-extrabold sm:text-3xl">{s.value}</p>
+                  <p className="text-xs leading-snug text-primary-foreground/75">{s.label}</p>
+                </StaggerItem>
+              )
+            })}
+          </Stagger>
           <CtaLink
             href={ASSOCIATION_BROCHURE_URL}
             external

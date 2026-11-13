@@ -68,7 +68,7 @@ export function SiteHeader() {
             href={CONTACT.whatsapp.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 hover:text-brand-green"
+            className="inline-flex items-center gap-2 rounded-md bg-brand-green-strong px-2.5 py-1 font-semibold text-white transition-colors hover:bg-brand-green-strong/90"
           >
             <WhatsAppIcon className="size-4" />
             <span className="sr-only">WhatsApp</span>

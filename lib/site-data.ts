@@ -83,6 +83,14 @@ export type TeamMember = {
   image: string
 }
 
+export type Specialist = {
+  title: string
+  icon: IconName
+  /** Years and headline credential shown in the green tab. */
+  years: string
+  points: string[]
+}
+
 export const ABOUT = {
   intro:
     'A management and technical consultancy based in Saudi Arabia, delivering practical, value-driven solutions for sustainable business performance.',
@@ -99,44 +107,6 @@ export const ABOUT = {
     'Collaboration & Knowledge Sharing',
     'Sustainable Value',
   ],
-  expertise: [
-    {
-      title: 'ISO & Integrated Management Systems',
-      text: 'ISO 9001, 14001, 45001, 20121, IMS, audits and certification readiness.',
-      visual: 'network',
-      href: '/services/iso-integrated-management-systems',
-    },
-    {
-      title: 'Business & Operational Excellence',
-      text: 'Process improvement, SOPs, KPIs, performance management and continual improvement.',
-      visual: 'gears',
-      href: '/services/business-operational-excellence',
-    },
-    {
-      title: 'Project Management & Assurance',
-      text: 'PMO, project controls, QA/QC, contractor reviews and project delivery assurance.',
-      visual: 'pipeline',
-      href: '/services/project-management-engineering-advisory',
-    },
-    {
-      title: 'Audit, Risk, Governance & Compliance',
-      text: 'Internal audits, risk assessments, governance reviews, compliance and business continuity.',
-      visual: 'chart',
-      href: '/services/business-operational-excellence',
-    },
-    {
-      title: 'Food Safety & Quality Management',
-      text: 'HACCP, ISO 22000, FSSC 22000, hygiene assessments and supplier audits.',
-      visual: 'shield',
-      href: '/services/food-safety-quality-management',
-    },
-    {
-      title: 'HSE & Sustainability Advisory',
-      text: 'HSE management, process safety, environmental compliance and sustainability support.',
-      visual: 'globe',
-      href: '/services/hse-environmental-sustainability',
-    },
-  ] satisfies { title: string; text: string; visual: VisualKind; href: string }[],
   networkIntro: 'A blend of proven leadership and specialized technical expertise.',
   team: [
     {
@@ -152,7 +122,7 @@ export const ABOUT = {
       role: 'Senior Piping Engineering Consultant',
       credentials: '35+ Years of Industry Experience | Piping Engineering & Technical Advisory',
       summary:
-        'Specialist in piping engineering, FEED, piping stress analysis, engineering design reviews and brownfield modifications, with approximately 28 years of dedicated piping engineering experience supporting complex industrial projects.',
+        'Specialist in piping engineering, FEED, piping stress analysis, engineering design reviews and brownfield modifications, with 35+ years of industry experience, including approximately 28 years of dedicated piping engineering experience supporting complex industrial projects.',
       image: '/images/team/chowdary-mukhtar.jpg',
     },
     {
@@ -178,21 +148,47 @@ export const ABOUT = {
   specialists: [
     {
       title: 'Wet Infrastructure, Water & Wastewater Engineering',
-      text: 'Hydraulic steady-state and transient modelling using WaterGEMS and HAMMER, pumping systems, and pump and pipeline engineering at FEED level. Includes root cause analysis of pumping and treatment-plant failures, asset condition and criticality assessments, MTBF/MTTR analysis, repair-versus-replacement evaluations, remaining useful life estimation and building firefighting mechanical design.',
-      icon: 'Droplet' as IconName,
-      badges: ['WaterGEMS', 'HAMMER', 'FEED'] as string[],
+      icon: 'Droplet',
+      years: 'Hydraulic & Water Infrastructure',
+      points: [
+        'WaterGEMS & HAMMER modelling',
+        'Water & wastewater pumping',
+        'Pump & pipeline FEED',
+        'Treatment-plant RCA',
+        'Asset condition & criticality',
+        'MTBF/MTTR analysis',
+        'Repair-or-replace evaluation',
+        'Firefighting system design',
+      ],
     },
     {
       title: 'Rotating Equipment & Reliability Engineering',
-      text: '20+ years of specialist experience in rotating machinery diagnostics, troubleshooting, vibration analysis, lubrication monitoring and machinery performance improvement. Advanced online and offline condition monitoring, machinery design reviews, Factory Acceptance Test (FAT) witnessing, reliability programmes and technical support for Management of Change (MOC).',
-      icon: 'Settings' as IconName,
-      badges: ['BHGE System 1', 'Emerson CSI', 'SKF Microlog'] as string[],
+      icon: 'Settings',
+      years: '20+ Years Experience',
+      points: [
+        'Machinery diagnostics',
+        'Vibration & oil analysis',
+        'Advanced condition monitoring',
+        'BHGE, Emerson CSI & SKF',
+        'FAT witnessing',
+        'Equipment troubleshooting',
+        'Reliability improvement',
+        'Management of Change',
+      ],
     },
     {
       title: 'HSE & Process Safety',
-      text: '17+ years of professional experience in oil, gas and petrochemical industries, covering occupational safety, process safety, EHSS assurance, operational risk management, contractor safety and regulatory compliance. Specialist capabilities include process safety leadership, industrial risk assessment, turnaround safety, work permit and LOTO training, and workforce competency development.',
-      icon: 'HardHat' as IconName,
-      badges: ['CSP – Certified Safety Professional (BCSP, USA)', 'ASP – Associate Safety Professional (BCSP, USA)'] as string[],
+      icon: 'HardHat',
+      years: '17+ Years | CSP & ASP (BCSP, USA)',
+      points: [
+        'Industrial HSE & process safety',
+        'EHSS assurance',
+        'Risk assessment & management',
+        'Contractor safety',
+        'Safety management systems',
+        'Permit-to-work & LOTO',
+        'HSE training & competency',
+      ],
     },
-  ],
+  ] satisfies Specialist[],
 }

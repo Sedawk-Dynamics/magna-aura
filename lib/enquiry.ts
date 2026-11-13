@@ -21,7 +21,7 @@ export function validateEnquiry(f: EnquiryFields): EnquiryErrors {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = 'Please enter a valid email address.'
   if (!/^[0-9\s-]{7,15}$/.test(f.phone.trim())) e.phone = 'Please enter a valid contact number.'
   if (!f.service.trim()) e.service = 'Please select a service.'
-  if (f.description.trim().length < 10) e.description = 'Please describe your requirements (at least 10 characters).'
+  if (!f.description.trim()) e.description = 'Please describe your requirements.'
   if (f.description.length > MAX_DESC) e.description = `Please keep your description under ${MAX_DESC} characters.`
   return e
 }

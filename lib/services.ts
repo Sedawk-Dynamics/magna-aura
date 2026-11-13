@@ -20,6 +20,7 @@ export type ServiceGroup = {
 
 export type ServiceSection = {
   heading: string
+  /** Each entry is shown as one bullet point. */
   paragraphs: string[]
 }
 
@@ -151,33 +152,37 @@ export const SERVICES: Service[] = [
         {
           heading: 'International Standards & Integrated Management Systems Expertise',
           paragraphs: [
-            'Consulting expertise across internationally recognized management-system standards, including ISO 9001, ISO 14001, ISO 45001, ISO 20121 and other applicable ISO frameworks.',
-            'Our capabilities include management-system development, integration, gap assessments, risk-based planning, process documentation, compliance evaluations and continual improvement.',
-            'We support organizations in developing Integrated Management Systems (IMS) that align quality, environmental, occupational health and safety, and other applicable management requirements within a coordinated governance framework.',
+            'Expertise across ISO 9001, ISO 14001, ISO 45001, ISO 20121 and other ISO frameworks',
+            'Development, integration, gap assessments and risk-based planning',
+            'Process documentation, compliance evaluations and continual improvement',
+            'Integrated Management Systems (IMS) aligned under one governance framework',
           ],
         },
         {
           heading: 'Experienced Management-System Consultants & Auditors',
           paragraphs: [
-            'Access to experienced management-system consultants and auditors through our consulting team and international association, with professional experience in quality management, HSE, project assurance, operational excellence and organizational performance.',
-            'Our consulting capabilities include ISO lead auditing, internal audit programme development, management reviews, nonconformity management, corrective actions and management-system effectiveness assessments.',
-            'This combination of consulting and auditing expertise supports both management-system compliance and operational improvement.',
+            'Consultants and auditors across quality, HSE, project assurance and operations',
+            'ISO lead auditing and internal audit programme development',
+            'Management reviews and nonconformity management',
+            'Corrective actions and management-system effectiveness assessments',
           ],
         },
         {
           heading: 'Practical Implementation & Organizational Capability Development',
           paragraphs: [
-            'Hands-on support extending beyond documentation to the implementation of policies, procedures, process controls, risk assessments, performance indicators and management-system requirements.',
-            'Our approach includes employee awareness, competency development, internal auditor training, implementation monitoring and knowledge transfer to help organizations establish management systems that function effectively in day-to-day operations.',
-            'We emphasize practical application, process ownership and management engagement rather than documentation developed solely for certification purposes.',
+            'Support beyond documentation: policies, procedures and process controls',
+            'Employee awareness, competency development and internal auditor training',
+            'Implementation monitoring and knowledge transfer',
+            'Focus on practical application and process ownership',
           ],
         },
         {
           heading: 'Certification Readiness & Continual Improvement',
           paragraphs: [
-            'Structured support throughout the certification preparation process, including initial gap assessments, implementation planning, internal audits, management reviews, corrective action verification and pre-certification readiness assessments.',
-            'We help organizations prepare for independent certification audits, address identified gaps and maintain management-system effectiveness through surveillance and recertification cycles.',
-            'Our focus extends beyond achieving certification to strengthening organizational performance, regulatory compliance, risk management and continual improvement.',
+            'Initial gap assessments and implementation planning',
+            'Internal audits, management reviews and corrective action verification',
+            'Pre-certification readiness assessments',
+            'Preparation for independent audits and surveillance cycles',
           ],
         },
       ],
@@ -191,21 +196,21 @@ export const SERVICES: Service[] = [
       { code: 'ISO 20000', label: 'IT Service Management', icon: 'Server' },
       { code: 'ISO 27001', label: 'Information Security', icon: 'ShieldCheck' },
       { code: 'ISO 22000', label: 'Food Safety Management', icon: 'UtensilsCrossed' },
-      { code: 'BRCGS', label: 'Certification', icon: 'Award' },
+      { code: 'BRCGS', label: 'Readiness', icon: 'Award' },
       { code: 'ISO 14001', label: 'Environmental Management', icon: 'Leaf' },
       { code: 'ISO 31000', label: 'Risk Management', icon: 'Scale' },
       { code: 'ISO 55001', label: 'Asset Management', icon: 'Settings' },
       { code: 'ISO 46001', label: 'Water Efficiency Management', icon: 'Droplet' },
       { code: 'ISO 42001', label: 'Artificial Intelligence Management', icon: 'Cpu' },
       { code: 'ISO 27701', label: 'Privacy Protection Management', icon: 'Fingerprint' },
-      { code: 'HALAL', label: 'Certification', icon: 'BadgeCheck' },
-      { code: 'FSSC 22000', label: 'Certification', icon: 'Award' },
+      { code: 'HALAL', label: 'Readiness', icon: 'BadgeCheck' },
+      { code: 'FSSC 22000', label: 'Readiness', icon: 'Award' },
       { code: 'ISO 45001', label: 'Health & Safety Management', icon: 'HardHat' },
       { code: 'ISO 26000', label: 'Corporate Social Responsibility', icon: 'Handshake' },
       { code: 'ISO 17020', label: 'Inspection Bodies Accreditation', icon: 'SearchCheck' },
       { code: 'ISO 17025', label: 'Testing & Calibration Laboratories', icon: 'FlaskConical' },
-      { code: 'HACCP', label: 'Certification', icon: 'ListChecks' },
-      { code: 'GLOBALG.A.P.', label: 'Certification', icon: 'Sprout' },
+      { code: 'HACCP', label: 'Readiness', icon: 'ListChecks' },
+      { code: 'GLOBALG.A.P.', label: 'Readiness', icon: 'Sprout' },
       { code: 'ISO 27031', label: 'ICT Readiness for Business Continuity', icon: 'Server' },
       { code: 'ISO 22301', label: 'Business Continuity Management', icon: 'ShieldAlert' },
     ],
@@ -308,29 +313,31 @@ export const SERVICES: Service[] = [
         {
           heading: 'Experienced & Professionally Qualified Leadership',
           paragraphs: [
-            'Our consulting leadership brings over 25 years of professional experience across management systems, project management, quality assurance, operational excellence and organizational performance.',
-            'Professional credentials include Project Management Professional (PMP®), PMI Risk Management Professional (PMI-RMP®) and Lean Six Sigma Black Belt, supporting structured, risk-based and results-oriented consulting.',
+            'Over 25 years across management systems, projects, quality and operational excellence',
+            'PMP®, PMI-RMP® and Lean Six Sigma Black Belt credentials',
           ],
         },
         {
           heading: 'International & Multidisciplinary Consulting Expertise',
           paragraphs: [
-            'Through our formal association with Al-Noor International Consultants, Kuwait, we have access to established consulting knowledge and methodologies in management systems, business excellence, organizational improvement and professional training.',
-            'Combined with our multidisciplinary expertise in business process management, governance, operational risk, project assurance and performance improvement, this enables us to develop solutions suited to the operational and business requirements of organizations in Saudi Arabia.',
+            'Established methodologies through our association with Al-Noor International Consultants, Kuwait',
+            'Business process management, governance, operational risk and project assurance expertise',
           ],
         },
         {
           heading: 'Practical Implementation & Capability Development',
           paragraphs: [
-            'We support organizations beyond assessments and recommendations through business process mapping, SOP development, KPI framework implementation, management-system integration and structured improvement initiatives.',
-            'Our approach emphasizes stakeholder engagement, employee awareness, competency development, knowledge transfer and implementation support to embed improvements into day-to-day operations.',
+            'Business process mapping and SOP development',
+            'KPI framework implementation and management-system integration',
+            'Stakeholder engagement, employee awareness and knowledge transfer',
           ],
         },
         {
           heading: 'Measurable Performance & Continual Improvement',
           paragraphs: [
-            'We apply structured improvement methodologies, including Lean Six Sigma, root cause analysis, process optimization and performance monitoring, to identify inefficiencies, address recurring problems and strengthen operational effectiveness.',
-            'Through defined KPIs, performance dashboards, corrective action plans and continual improvement programmes, we help organizations monitor progress, reduce process variation and achieve sustainable improvements in efficiency, quality and service delivery.',
+            'Lean Six Sigma, root cause analysis and process optimization',
+            'KPIs, performance dashboards and corrective action plans',
+            'Lower process variation and sustained gains in efficiency, quality and service',
           ],
         },
       ],
@@ -455,28 +462,33 @@ export const SERVICES: Service[] = [
         {
           heading: 'Certified Project Management & Risk Leadership',
           paragraphs: [
-            'Project management expertise supported by internationally recognized PMP® and PMI-RMP® certifications, with extensive experience in project governance, project controls, risk management, performance monitoring and delivery assurance.',
+            'PMP® and PMI-RMP® certified project management leadership',
+            'Project governance, controls, risk management and delivery assurance',
           ],
         },
         {
           heading: 'Project Quality, Inspection & Assurance Specialists',
           paragraphs: [
-            'Experienced QA/QC and inspection professionals with expertise in contractor performance assessment, quality management, technical inspections, project audits, nonconformity management and project handover assurance.',
-            'Specialist credentials within our consulting team include NDT Level III, API 510 and IMS Lead Auditor qualifications.',
+            'QA/QC and inspection: contractor performance, audits and nonconformity management',
+            'Project handover assurance',
+            'Credentials: NDT Level III, API 510 and IMS Lead Auditor',
           ],
         },
         {
           heading: 'Multidisciplinary Engineering & Technical Advisory',
           paragraphs: [
-            'Access to experienced specialists in piping, electrical, mechanical and wet infrastructure engineering, including FEED reviews, hydraulic modelling, technical assessments, engineering coordination and industrial project advisory.',
-            'Our specialist network includes professionals with approximately 30–35 years of engineering and project experience across relevant disciplines.',
+            'Piping, electrical, mechanical and wet infrastructure engineering',
+            'FEED reviews, hydraulic modelling and technical assessments',
+            'Engineering coordination and industrial project advisory',
+            'Specialist network with approximately 30–35 years of combined experience',
           ],
         },
         {
           heading: 'Practical Project Solutions & Delivery Improvement',
           paragraphs: [
-            'Project-focused assessments, root cause analysis, risk-based evaluations, contractor performance reviews, technical problem-solving and actionable improvement recommendations.',
-            'Our approach emphasizes practical implementation, project risk reduction, quality improvement and effective project delivery.',
+            'Root cause analysis and risk-based evaluations',
+            'Contractor performance reviews and technical problem-solving',
+            'Actionable improvement recommendations and project risk reduction',
           ],
         },
       ],
@@ -593,25 +605,33 @@ export const SERVICES: Service[] = [
         {
           heading: 'IAM-Qualified Asset Management Professional',
           paragraphs: [
-            'Our Principal Consultant holds the Institute of Asset Management (IAM) Certificate in Asset Management, awarded through examination. This professional qualification supports our advisory capabilities in asset management principles, lifecycle planning, asset performance improvement and alignment with ISO 55001.',
+            'Principal Consultant holds the IAM Certificate in Asset Management, awarded through examination',
+            'Supports lifecycle planning and asset performance improvement',
+            'Aligned with ISO 55001',
           ],
         },
         {
           heading: 'Rotating Equipment & Condition Monitoring Specialists',
           paragraphs: [
-            'Over 20 years of specialist experience in rotating machinery diagnostics, vibration analysis, lubrication monitoring, equipment troubleshooting and performance improvement, using advanced technologies including BHGE System 1, Emerson CSI and SKF Microlog.',
+            '20+ years in rotating machinery diagnostics and vibration analysis',
+            'Lubrication monitoring and equipment troubleshooting',
+            'Tools: BHGE System 1, Emerson CSI and SKF Microlog',
           ],
         },
         {
           heading: 'Maintenance & Reliability Engineering Specialists',
           paragraphs: [
-            'Expertise in maintenance strategy development, preventive and predictive maintenance, reliability-centred maintenance (RCM), equipment criticality assessment and performance monitoring to improve asset availability, operational efficiency and lifecycle value.',
+            'Maintenance strategy and preventive and predictive maintenance',
+            'Reliability-centred maintenance (RCM) and equipment criticality assessment',
+            'Higher asset availability and lifecycle value',
           ],
         },
         {
           heading: 'Root Cause Analysis & Asset Performance Specialists',
           paragraphs: [
-            'Technical expertise in equipment failure investigations, root cause analysis (RCA), repair-versus-replacement evaluations, asset condition assessments, remaining useful life estimation and reliability improvement planning.',
+            'Equipment failure investigations and root cause analysis (RCA)',
+            'Repair-versus-replacement evaluations',
+            'Asset condition assessments and remaining useful life estimation',
           ],
         },
       ],
@@ -721,29 +741,33 @@ export const SERVICES: Service[] = [
         {
           heading: 'International Food Safety Standards Expertise',
           paragraphs: [
-            'Consulting expertise across internationally recognized food safety and quality frameworks, including ISO 22000, FSSC 22000, BRCGS, HACCP, Halal and GLOBALG.A.P.',
-            'Our capabilities include food safety gap assessments, hazard analysis, prerequisite programmes (PRPs), food safety management-system development, internal audits and certification-readiness support.',
+            'ISO 22000, FSSC 22000, BRCGS, HACCP, Halal and GLOBALG.A.P. frameworks',
+            'Gap assessments, hazard analysis and prerequisite programmes (PRPs)',
+            'Food safety management-system development, internal audits and readiness support',
           ],
         },
         {
           heading: 'Experienced Food Safety Consultants & Auditors',
           paragraphs: [
-            'Access to experienced food safety management-system consultants and auditors through our international consulting association, supporting food manufacturing, processing, catering, hospitality, distribution and related sectors.',
-            'Expertise covers food safety risk assessment, hygiene and sanitation controls, supplier assurance, food safety documentation, compliance evaluations and management-system effectiveness.',
+            'Support for manufacturing, processing, catering, hospitality and distribution',
+            'Food safety risk assessment, hygiene and sanitation controls',
+            'Supplier assurance and documentation reviews',
           ],
         },
         {
           heading: 'Practical Implementation & Certification Readiness',
           paragraphs: [
-            'Hands-on consulting support for developing and implementing food safety policies, HACCP plans, procedures, monitoring systems, traceability arrangements, corrective action processes and verification activities.',
-            'Our implementation approach focuses on practical operational controls, staff engagement, documentation effectiveness and preparedness for independent certification or customer audits.',
+            'Food safety policies, HACCP plans and monitoring systems',
+            'Traceability arrangements and corrective action processes',
+            'Preparation for independent certification or customer audits',
           ],
         },
         {
           heading: 'Food Safety Training & Capacity Development',
           paragraphs: [
-            'Structured training and awareness programmes covering food hygiene, HACCP principles, food safety hazards, prerequisite programmes, internal auditing, food safety management systems and operational compliance.',
-            'Through knowledge transfer, workforce awareness and competency development, we help organizations strengthen food safety culture and maintain effective food safety practices.',
+            'Training on food hygiene, HACCP principles and food safety hazards',
+            'Internal auditing and food safety management systems',
+            'Stronger food safety culture and workforce competency',
           ],
         },
       ],
@@ -838,29 +862,33 @@ export const SERVICES: Service[] = [
         {
           heading: 'Certified HSE & Process Safety Professionals',
           paragraphs: [
-            'Our specialist consulting network includes an HSE professional holding Certified Safety Professional (CSP) and Associate Safety Professional (ASP) credentials from the Board of Certified Safety Professionals (BCSP), USA, with over 17 years of experience in the oil, gas and petrochemical industries.',
-            'Expertise includes occupational safety, process safety, EHSS assurance, risk assessment, contractor safety management and industrial safety compliance.',
+            'CSP and ASP credentials from the Board of Certified Safety Professionals (BCSP), USA',
+            '17+ years in the oil, gas and petrochemical industries',
+            'Occupational safety, process safety, EHSS assurance and contractor safety',
           ],
         },
         {
           heading: 'Practical HSE Implementation & Training',
           paragraphs: [
-            'Hands-on support in developing and implementing HSE management systems, policies, procedures, risk assessments, safe work practices, emergency preparedness arrangements and operational safety controls.',
-            'Our capabilities also include HSE induction, workforce awareness, competency development, permit-to-work and lockout/tagout (LOTO) training support, and practical implementation assessments.',
+            'HSE management systems, policies, procedures and risk assessments',
+            'Emergency preparedness and operational safety controls',
+            'HSE induction, permit-to-work and lockout/tagout (LOTO) training support',
           ],
         },
         {
           heading: 'Regulatory Compliance & Risk Management',
           paragraphs: [
-            'Expertise in HSE compliance assessments, hazard identification, operational risk evaluations, compliance gap analysis, contractor HSE assessments, internal audits and corrective action management.',
-            'Our approach considers applicable Saudi Arabian regulatory requirements, relevant international standards and client-specific HSE obligations, including ISO 45001 and ISO 14001 management-system requirements.',
+            'HSE compliance assessments and compliance gap analysis',
+            'Hazard identification and operational risk evaluations',
+            'Saudi Arabian regulatory requirements, ISO 45001 and ISO 14001',
           ],
         },
         {
           heading: 'Environmental Management & Sustainable Operations',
           paragraphs: [
-            'Consulting support in environmental management systems, environmental aspects and impacts assessment, waste management, resource efficiency, pollution prevention and environmental performance improvement.',
-            'We help organizations integrate environmental responsibilities into operational processes, strengthen environmental compliance and pursue practical, measurable sustainability improvements.',
+            'Environmental management systems and environmental aspects and impacts assessments',
+            'Waste management, resource efficiency and pollution prevention',
+            'Measurable sustainability improvements',
           ],
         },
       ],

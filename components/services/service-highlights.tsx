@@ -34,11 +34,16 @@ export function ServiceHighlights({ service }: { service: Service }) {
                   <span className="text-brand-green">{String(i + 1).padStart(2, '0')}</span>
                   {section.heading}
                 </h3>
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="text-sm leading-relaxed text-primary-foreground/75">
-                    <LinkKuwait text={paragraph} />
-                  </p>
-                ))}
+                <ul className="flex flex-col gap-2.5">
+                  {section.paragraphs.map((paragraph) => (
+                    <li key={paragraph} className="flex gap-2.5 text-sm leading-relaxed text-primary-foreground/80">
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-green" aria-hidden="true" />
+                      <span>
+                        <LinkKuwait text={paragraph} />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </StaggerItem>
             ))}
           </Stagger>

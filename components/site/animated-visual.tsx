@@ -222,7 +222,60 @@ function Globe() {
   )
 }
 
+/* A clasp between two hands: the arms draw together, then the clasp pulses. */
+function Handshake() {
+  return (
+    <g>
+      <circle
+        cx="400"
+        cy="250"
+        r="200"
+        fill="none"
+        stroke="var(--brand-blue)"
+        strokeOpacity="0.2"
+        strokeWidth="2"
+        strokeDasharray="6 10"
+        className="av-spin"
+        style={{ transformOrigin: '400px 250px', animationDuration: '30s' }}
+      />
+      <circle cx="400" cy="265" r="70" fill="none" stroke="var(--brand-green)" strokeWidth="2" className="av-ring" />
+      <g className="av-shake-l">
+        <path
+          d="M40 300 L250 240 Q300 226 340 250 L400 290"
+          fill="none"
+          stroke="var(--brand-blue)"
+          strokeWidth="26"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <g className="av-shake-r">
+        <path
+          d="M760 300 L550 240 Q500 226 460 250 L400 290"
+          fill="none"
+          stroke="var(--brand-green)"
+          strokeWidth="26"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <ellipse
+        cx="400"
+        cy="270"
+        rx="62"
+        ry="46"
+        fill="var(--brand-green)"
+        fillOpacity="0.35"
+        stroke="var(--brand-green)"
+        strokeWidth="3"
+        className="av-pulse"
+      />
+    </g>
+  )
+}
+
 const SCENES: Record<VisualKind, () => ReactNode> = {
+  handshake: Handshake,
   network: Network,
   gears: Gears,
   pipeline: Pipeline,

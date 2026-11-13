@@ -120,6 +120,22 @@
   stroke-dasharray: 1;
   animation: av-draw 3.5s ease-in-out infinite;
 }
+.av-shake-l {
+  animation: av-shake-l 2.4s ease-in-out infinite alternate;
+}
+.av-shake-r {
+  animation: av-shake-r 2.4s ease-in-out infinite alternate;
+}
+@keyframes av-shake-l {
+  to {
+    transform: translateX(34px);
+  }
+}
+@keyframes av-shake-r {
+  to {
+    transform: translateX(-34px);
+  }
+}
 
 @keyframes av-spin {
   to {
@@ -180,7 +196,9 @@
   .av-ring,
   .av-bar,
   .av-flow,
-  .av-draw {
+  .av-draw,
+  .av-shake-l,
+  .av-shake-r {
     animation: none;
   }
   .av-draw {
