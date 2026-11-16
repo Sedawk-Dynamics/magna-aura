@@ -4,6 +4,7 @@ import { Manrope } from 'next/font/google'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import { MotionProvider } from '@/components/site/motion-provider'
+import { WhatsAppFloat } from '@/components/site/whatsapp-float'
 import { CONTACT, SITE } from '@/lib/site-data'
 import './globals.css'
 
@@ -128,6 +129,7 @@ export default function RootLayout({
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
+          <WhatsAppFloat />
         </MotionProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
