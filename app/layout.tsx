@@ -4,7 +4,7 @@ import { Manrope } from 'next/font/google'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import { MotionProvider } from '@/components/site/motion-provider'
-import { SITE } from '@/lib/site-data'
+import { CONTACT, SITE } from '@/lib/site-data'
 import './globals.css'
 
 const manrope = Manrope({
@@ -13,36 +13,100 @@ const manrope = Manrope({
   display: 'swap',
 })
 
+const DEFAULT_TITLE = `${SITE.name} | ISO, Engineering & Asset Reliability Consultancy`
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | ISO, Engineering & Asset Reliability Consultancy`,
+    default: DEFAULT_TITLE,
     template: `%s | ${SITE.shortName}`,
   },
   description: SITE.description,
-  generator: 'v0.app',
+  keywords: [
+    'ISO consultancy Saudi Arabia',
+    'ISO 9001 consultant Jeddah',
+    'ISO 14001 consultant',
+    'ISO 45001 consultant',
+    'ISO 22000 food safety consultant',
+    'integrated management systems',
+    'HSE consultancy Saudi Arabia',
+    'process safety consultant',
+    'asset management consultancy',
+    'rotating equipment reliability',
+    'project management consultancy Saudi Arabia',
+    'engineering advisory Jeddah',
+    'business excellence consultancy',
+    'Al-Noor Arabia',
+  ],
+  applicationName: SITE.shortName,
+  authors: [{ name: SITE.name }],
+  creator: SITE.name,
+  publisher: SITE.name,
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
+    locale: 'en_SA',
     siteName: SITE.name,
-    title: SITE.name,
+    title: DEFAULT_TITLE,
     description: SITE.description,
     url: SITE.url,
-    images: [{ url: '/images/al-noor-arabia-logo.png', width: 1400, height: 325, alt: SITE.name }],
+    images: [{ url: '/image.png', width: 80, height: 82, alt: SITE.name }],
+  },
+  twitter: {
+    card: 'summary',
+    title: DEFAULT_TITLE,
+    description: SITE.description,
+    images: ['/image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  verification: {
+    google: 'Tcsde71UDiifFB0Irb63AC5EwORmflgZwIJru8wmOUg',
   },
   icons: {
-    icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/image.png',
+    shortcut: '/image.png',
+    apple: '/image.png',
   },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light',
   themeColor: '#0b2a5b',
+}
+
+/** Organization / local business details for search engines (schema.org). */
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: SITE.name,
+  alternateName: SITE.shortName,
+  url: SITE.url,
+  logo: `${SITE.url}/image.png`,
+  description: SITE.description,
+  telephone: CONTACT.phone.display,
+  email: CONTACT.email.display,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'As Safa',
+    addressLocality: 'Jeddah',
+    postalCode: '23453',
+    addressCountry: 'SA',
+  },
+  areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
+  knowsAbout: [
+    'ISO 9001',
+    'ISO 14001',
+    'ISO 45001',
+    'ISO 22000',
+    'Integrated management systems',
+    'HSE and process safety',
+    'Asset management and equipment reliability',
+    'Project management and engineering advisory',
+  ],
 }
 
 export default function RootLayout({
@@ -53,6 +117,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} bg-background`}>
       <body className="antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <MotionProvider>
           <a
             href="#main"
