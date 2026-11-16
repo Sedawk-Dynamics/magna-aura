@@ -6,7 +6,16 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowRight, CheckCircle2, ClipboardPen, Lock } from 'lucide-react'
 import { CONTACT } from '@/lib/site-data'
 import { SERVICES } from '@/lib/services'
-import { MAX_DESC, validateEnquiry, type EnquiryErrors, type EnquiryFields } from '@/lib/enquiry'
+import {
+  COUNTRY_CODES,
+  DEFAULT_COUNTRY_CODE,
+  MAX_DESC,
+  WEB3FORMS_ACCESS_KEY,
+  WEB3FORMS_ENDPOINT,
+  validateEnquiry,
+  type EnquiryErrors,
+  type EnquiryFields,
+} from '@/lib/enquiry'
 import { WhatsAppIcon } from '@/components/site/whatsapp-icon'
 import { cn } from '@/lib/utils'
 
@@ -57,6 +66,7 @@ export function ContactForm() {
     company: '',
     jobTitle: '',
     email: '',
+    countryCode: DEFAULT_COUNTRY_CODE,
     phone: '',
     service: '',
     location: '',
@@ -87,17 +97,35 @@ export function ContactForm() {
       return
     }
 
+    // Honeypot filled in: behave as if sent, but send nothing.
+    if (website) {
+      setSent(true)
+      return
+    }
+
     setSubmitting(true)
     try {
-      const response = await fetch('/api/enquiry', {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...fields, website }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Consultation Request – ${fields.service}`,
+          from_name: fields.name,
+          replyto: fields.email,
+          name: fields.name,
+          email: fields.email,
+          company: fields.company,
+          job_title: fields.jobTitle,
+          phone: `${fields.countryCode} ${fields.phone}`,
+          service: fields.service,
+          location: fields.location,
+          message: fields.description,
+        }),
       })
-      const data = (await response.json().catch(() => ({}))) as { error?: string; fields?: EnquiryErrors }
-      if (!response.ok) {
-        if (data.fields) setErrors(data.fields)
-        setFailure(data.error ?? 'We could not send your enquiry. Please try again.')
+      const data = (await response.json().catch(() => ({}))) as { success?: boolean; message?: string }
+      if (!response.ok || !data.success) {
+        setFailure(data.message ?? 'We could not send your enquiry. Please try again.')
         return
       }
       setSent(true)
@@ -181,9 +209,20 @@ export function ContactForm() {
             </Field>
             <Field id="phone" label="Contact Number" required error={errors.phone}>
               <div className="flex">
-                <span className="inline-flex items-center rounded-l-lg border border-r-0 bg-muted px-3 text-sm font-semibold">
-                  +966
-                </span>
+                <select
+                  id="countryCode"
+                  name="countryCode"
+                  aria-label="Country code"
+                  value={fields.countryCode}
+                  onChange={set('countryCode')}
+                  className="rounded-l-lg border border-r-0 bg-muted px-2 text-sm font-semibold text-foreground outline-none focus-visible:border-brand-blue focus-visible:ring-3 focus-visible:ring-brand-blue/20"
+                >
+                  {COUNTRY_CODES.map((c) => (
+                    <option key={c.code} value={c.code}>
+                      {c.label}
+                    </option>
+                  ))}
+                </select>
                 <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder="Enter your contact number" value={fields.phone} onChange={set('phone')} className={cn(inputClass, 'rounded-l-none')} {...describe('phone')} />
               </div>
             </Field>

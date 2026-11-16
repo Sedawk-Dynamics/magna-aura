@@ -45,11 +45,11 @@ export const ASSOCIATION = {
 
 export const INDUSTRIES: { name: string; visual: VisualKind; icon: IconName }[] = [
   { name: 'Oil, Gas & Petrochemicals', visual: 'pipeline', icon: 'Droplet' },
-  { name: 'Water, Wastewater & Utilities', visual: 'pipeline', icon: 'Waves' },
+  { name: 'Water, Wastewater & Utilities', visual: 'waves', icon: 'Waves' },
   { name: 'Manufacturing & Industrial Operations', visual: 'gears', icon: 'Factory' },
   { name: 'Construction & Infrastructure', visual: 'network', icon: 'Construction' },
   { name: 'Food & Hospitality', visual: 'shield', icon: 'UtensilsCrossed' },
-  { name: 'Facilities & Asset Operations', visual: 'network', icon: 'Building2' },
+  { name: 'Facilities & Asset Operations', visual: 'chart', icon: 'Building2' },
 ]
 
 export const WHY_US: { title: string; text: string; icon: IconName }[] = [
@@ -73,13 +73,20 @@ export const WHY_US: { title: string; text: string; icon: IconName }[] = [
     text: 'Implementation support, technical excellence and measurable improvement.',
     icon: 'TrendingUp',
   },
+  {
+    title: 'International Association',
+    text: 'Formally associated with Al-Noor International Consultants, Kuwait, bringing established international expertise to Saudi Arabia.',
+    icon: 'Handshake',
+  },
 ]
 
 export type TeamMember = {
   name: string
   role: string
-  credentials: string
-  summary: string
+  /** Each entry is shown as one bullet point. */
+  credentials: string[]
+  /** Each entry is shown as one bullet point. */
+  summary: string[]
   image: string
 }
 
@@ -112,33 +119,49 @@ export const ABOUT = {
     {
       name: 'Mohammed Irfan',
       role: 'General Manager & Principal Consultant',
-      credentials: 'Mechanical Engineer | PMP® | PMI-RMP® | Lean Six Sigma Black Belt | IAM Certificate in Asset Management',
-      summary:
-        'A multidisciplinary management and engineering professional with over 25 years of experience in project management, integrated management systems, operational excellence, risk management, project assurance and asset management.',
+      credentials: [
+        'Mechanical Engineer',
+        'PMP® | PMI-RMP®',
+        'Lean Six Sigma Black Belt',
+        'IAM Certificate in Asset Management',
+      ],
+      summary: [
+        'Over 25 years in project management, integrated management systems and operational excellence',
+        'Expertise in risk management, project assurance and asset management',
+      ],
       image: '/images/team/mohammed-irfan.jpg',
     },
     {
       name: 'Chowdary Mukhtar',
       role: 'Senior Piping Engineering Consultant',
-      credentials: '35+ Years of Industry Experience | Piping Engineering & Technical Advisory',
-      summary:
-        'Specialist in piping engineering, FEED, piping stress analysis, engineering design reviews and brownfield modifications, with 35+ years of industry experience, including approximately 28 years of dedicated piping engineering experience supporting complex industrial projects.',
+      credentials: ['35+ years of industry experience', 'Piping engineering & technical advisory'],
+      summary: [
+        'Piping engineering, FEED and piping stress analysis',
+        'Engineering design reviews and brownfield modifications',
+        'Approximately 28 years of dedicated piping engineering experience on complex industrial projects',
+      ],
       image: '/images/team/chowdary-mukhtar.jpg',
     },
     {
       name: 'Murugan',
       role: 'Senior Electrical Engineering & Project Management Consultant',
-      credentials: '30+ Years of Industry Experience | Electrical Engineering & Industrial Projects',
-      summary:
-        'Experienced in electrical engineering, industrial project management, engineering coordination, construction and commissioning, including extensive experience supporting SABIC engineering and project activities.',
+      credentials: ['30+ years of industry experience', 'Electrical engineering & industrial projects'],
+      summary: [
+        'Electrical engineering, industrial project management and engineering coordination',
+        'Construction and commissioning',
+        'Extensive experience supporting SABIC engineering and project activities',
+      ],
       image: '/images/team/murugan.jpg',
     },
     {
       name: 'Razack Javed',
       role: 'Senior QA/QC, Inspection & Management Systems Consultant',
-      credentials: '35+ Years of Industry Experience | NDT Level III | API 510 | IMS Lead Auditor',
-      summary:
-        'Specialist in quality assurance, quality control, technical inspection, project quality management and integrated management systems, with extensive experience in industrial project assurance, inspection management and compliance.',
+      credentials: ['35+ years of industry experience', 'NDT Level III | API 510 | IMS Lead Auditor'],
+      summary: [
+        'Quality assurance, quality control and technical inspection',
+        'Project quality management and integrated management systems',
+        'Industrial project assurance, inspection management and compliance',
+      ],
       image: '/images/team/razack-javed.jpg',
     },
   ] satisfies TeamMember[],

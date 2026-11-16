@@ -8,7 +8,7 @@ export function WhyUs() {
     <section aria-labelledby="why-title" className="bg-navy text-primary-foreground">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6 py-20">
         <SectionHeading id="why-title" tone="dark" eyebrow="Why Al-Noor Arabia?" title="Your Partner for Lasting Value" />
-        <Stagger className="grid gap-px overflow-hidden rounded-xl bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="grid gap-px overflow-hidden rounded-xl bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-5">
           {WHY_US.map((w) => {
             const Icon = ICONS[w.icon]
             return (

@@ -39,8 +39,22 @@ export function Team() {
                     <p className="w-fit rounded-md bg-brand-green-strong px-3 py-1 text-xs leading-snug font-bold text-accent-foreground">
                       {m.role}
                     </p>
-                    <p className="text-xs leading-relaxed font-semibold text-brand-blue">{m.credentials}</p>
-                    <p className="text-sm leading-relaxed text-brand-blue">{m.summary}</p>
+                    <ul className="flex flex-col gap-1.5">
+                      {m.credentials.map((c) => (
+                        <li key={c} className="flex gap-2.5 text-xs leading-relaxed font-semibold text-brand-blue">
+                          <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-green" aria-hidden="true" />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="flex flex-col gap-2 border-t pt-3">
+                      {m.summary.map((s) => (
+                        <li key={s} className="flex gap-2.5 text-sm leading-relaxed text-brand-blue">
+                          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-green" aria-hidden="true" />
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               </StaggerItem>

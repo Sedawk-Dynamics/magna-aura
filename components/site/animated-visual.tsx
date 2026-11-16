@@ -222,6 +222,46 @@ function Globe() {
   )
 }
 
+/* Flowing water lines with rising droplets. */
+function Waves() {
+  return (
+    <g>
+      {[0, 1, 2].map((i) => {
+        const y = 200 + i * 60
+        return (
+          <path
+            key={i}
+            d={`M-20 ${y} Q 100 ${y - 30} 200 ${y} T 400 ${y} T 600 ${y} T 820 ${y}`}
+            fill="none"
+            stroke={i === 1 ? 'var(--brand-green)' : 'var(--brand-blue)'}
+            strokeOpacity={0.6 - i * 0.12}
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeDasharray="14 14"
+            className="av-flow"
+            style={{ ['--dash-period' as string]: '28px', animationDelay: `${i * -0.6}s` } as CSSProperties}
+          />
+        )
+      })}
+      {[
+        [180, 120],
+        [420, 90],
+        [620, 140],
+      ].map(([x, y], i) => (
+        <circle
+          key={i}
+          cx={x}
+          cy={y}
+          r="9"
+          fill="var(--brand-green)"
+          className="av-pulse"
+          style={{ animationDelay: `${i * -0.8}s` }}
+        />
+      ))}
+    </g>
+  )
+}
+
 /* A clasp between two hands: the arms draw together, then the clasp pulses. */
 function Handshake() {
   return (
@@ -276,6 +316,7 @@ function Handshake() {
 
 const SCENES: Record<VisualKind, () => ReactNode> = {
   handshake: Handshake,
+  waves: Waves,
   network: Network,
   gears: Gears,
   pipeline: Pipeline,

@@ -88,7 +88,7 @@ export function SiteHeader() {
           scrolled ? 'shadow-md shadow-navy/5' : 'shadow-none',
         )}
       >
-        <nav aria-label="Main" className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+        <nav aria-label="Main" className="mx-auto flex max-w-none items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-10">
           <Logo priority />
 
           <ul className="hidden items-center gap-1 lg:flex">
