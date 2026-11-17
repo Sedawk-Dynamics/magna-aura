@@ -12,7 +12,7 @@ export const SITE = {
 }
 
 export const CONTACT = {
-  phone: { display: '+966 56 142 3145', href: 'tel:+966561423145' },
+  phone: { display: '+966 56 142 5145', href: 'tel:+966561425145' },
   whatsapp: { display: '+966 54 849 0871', href: 'https://wa.me/966548490871' },
   email: { display: 'info@alnoorarabia-consultants.com', href: 'mailto:info@alnoorarabia-consultants.com' },
   address: { lines: ['As Safa, Jeddah 23453', 'Kingdom of Saudi Arabia'] },
